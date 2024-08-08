@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Interno de Procedimentos (MIP)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Manual Interno de Procedimentos (MIP)</h1>
+        </header>
+
+        <main>
+               <!-- Sumário -->
+            <nav class="toc">
+                <h2>Sumário</h2>
+                <ul>
+                    <li><a href="#introducao">1. Introdução</a></li>
+                    <li><a href="#instrucoes">2. Instruções Detalhadas para a Execução de Tarefas</a></li>
+                    <li><a href="#qualidade">3. Qualidade e Integridade dos Dados</a></li>
+                    <li><a href="#documentacao">4. Documentação</a></li>
+                    <li><a href="#seguranca">5. Procedimentos de Segurança</a></li>
+                    <li><a href="#normas">6. Normas e Diretrizes</a></li>
+                    <li><a href="#responsabilidades">7. Responsabilidades de Cada Membro da Equipe</a></li>
+                    <li><a href="#ferramentas">8. Ferramentas e Materiais Necessários</a></li>
+                    <li><a href="#medidas">9. Medidas de Segurança e Uso de EPIs</a></li>
+                    <li><a href="#padroes">10. Padrões de Qualidade a Serem Atendidos</a></li>
+                    <li><a href="#formularios">11. Formulários e Registros Relevantes</a></li>
+                    <li><a href="#atualizacoes">12. Atualizações e Revisões do MIP</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botões para abrir e fechar todos os spoilers -->
+            <div class="controls">
+                <button id="open-all">Abrir Todos</button>
+                <button id="close-all">Fechar Todos</button>
+               
+            </div>
+
+           
+
+            <!-- Restante do conteúdo -->
+            <section id="introducao">
+                <h2>1. Introdução</h2>
+                <p>Este Manual Interno de Procedimentos (MIP) é um guia detalhado para a execução de tarefas dentro da nossa organização. Ele contém instruções, normas, responsabilidades, ferramentas, medidas de segurança, padrões de qualidade e formulários necessários para garantir a eficiência e a conformidade em todas as atividades.</p>
+            </section>
+
+            <section id="instrucoes">
+                <h2>2. Instruções Detalhadas para a Execução de Tarefas</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Exemplo de Tarefa: Processo de Análise de Dados</button>
+                    <div class="spoiler-content">
+                        <p><strong>Passo 1: Solicitação de Dados</strong></p>
+                        <ul>
+                            <li><strong>Métodos de Solicitação:</strong>
+                                <ul>
+                                    <li><strong>E-mail:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes de EMAIL</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Assunto: Solicitação de Dados para [Nome do Relatório/Projeto]
+
+Prezado(a) [Nome do Responsável],
+
+Solicito os seguintes dados para o projeto [Nome do Projeto]:
+- Tipo de Dados: [Descrição dos Dados]
+- Período: [Data de Início] a [Data de Fim]
+- Propósito: [Objetivo da Solicitação]
+
+Agradeço a atenção e aguardo o retorno.
+
+Atenciosamente,
+[Seu Nome]</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><strong>WhatsApp:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes de WhatsApp</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Olá [Nome],
+
+Preciso dos dados sobre [Descrição dos Dados] para [Nome do Projeto]. Pode me enviar esses dados para o período de [Data de Início] a [Data de Fim]? 
+
+Obrigado!</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><strong>Pessoalmente:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes de Pessoalmente</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Solicitação de Dados
+Data: [Data]
+Solicitante: [Seu Nome]
+Dados Solicitados: [Descrição dos Dados]
+Período: [Data de Início] a [Data de Fim]
+Propósito: [Objetivo da Solicitação]</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p><strong>Passo 2: Coleta de Dados</strong></p>
+                        <ul>
+                            <li><strong>Banco de Dados ERP (Firebird):</strong>
+                                <ul>
+                                    <li><strong>Fonte:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes da Fonte</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Espelho criado pelo analista de DevOps.</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><strong>Acesso:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes do Acesso</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Configurado no ambiente de desenvolvimento (localhost) disponibilizado pelo analista de DevOps.</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><strong>DSNs:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes de DNS</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>SAV50 para Santos</code></pre>
+                                                    <pre><code>SAV50-GRU para Guarulhos</code></pre>
+                                                    <pre><code>SAV-PG para Praia Grande</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Banco de Dados PostgreSQL:</strong>
+                                <ul>
+                                    <li><strong>Fonte:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes de Fonte</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Dados armazenados diretamente no banco.</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><strong>Acesso:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes de Acesso</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Configurado no mesmo ambiente de desenvolvimento (localhost) disponibilizado pelo analista de DevOps.</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Google Sheets:</strong>
+                                <ul>
+                                    <li><strong>Fonte:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes de Fonte</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Planilhas internas da empresa.</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><strong>Acesso:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Detalhes de Planilhas</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code>Links de compartilhamento e permissões necessárias.</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Métodos de Coleta:</strong>
+                                <ul>
+                                    <li><strong>SQL Queries:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Exemplo de Query</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">SELECT coluna1, coluna2 FROM tabela WHERE condição;</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><strong>Python Scripts:</strong>
+                                        <div class="spoiler">
+                                            <button class="spoiler-btn">Exemplo de Script</button>
+                                            <div class="spoiler-content">
+                                                <div class="code-block">
+                                                    <pre><code class="language-python">import pandas as pd
+from sqlalchemy import create_engine
+
+# Configuração da conexão
+engine = create_engine('postgresql://user:password@localhost/dbname')
+
+# Coleta de dados
+query = "SELECT coluna1, coluna2 FROM tabela WHERE condição;"
+df = pd.read_sql(query, engine)
+
+# Processamento
+df.drop_duplicates(inplace=True)
+df.fillna('Valor Padrão', inplace=True)
+
+# Salvar resultados
+df.to_csv('resultado.csv', index=False)</code></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p><strong>Passo 3: Análise e Criação de Relatórios</strong></p>
+                        <ul>
+                            <li><strong>Power BI:</strong>
+                                <div class="spoiler">
+                                    <button class="spoiler-btn">Detalhes em Power BI</button>
+                                    <div class="spoiler-content">
+                                        <div class="code-block">
+                                    <pre><code>
+                                        <img src="img/1 - novo relatorio.png" alt="Novo Relatório">
+                                        <br>
+                                        <img src="img/2 - obter dados.png" alt="Novo Relatório">
+                                        <br>
+                                        <img src="img/3 - obter dados mais.png" alt="Novo Relatório">
+                                        <br>
+                                        <img src="img/4 - SELECIONAR ODBC.png" alt="Novo Relatório">
+
+                                        <br>
+                                        <img src="img/5 - Escolher fonte de dados.png" alt="Novo Relatório">
+
+                                        <br>
+                                        <img src="img/6 - carregar tabela.png" alt="Novo Relatório">
+
+                                        <br>
+                                        <img src="img/7 - montar visualização.png" alt="Novo Relatório">
+
+                                      
+
+                                    </code></pre> </div></div> <!-- você vai colocar as imagens aqui-->
+                                </div>
+                            </li>
+                            <li><strong>Python:</strong>
+                                <div class="spoiler">
+                                    <button class="spoiler-btn">Exemplo de Script em Python</button>
+                                    <div class="spoiler-content">
+                                        <div class="code-block">
+                                            <pre><code class="language-python">import matplotlib.pyplot as plt
+
+# Exemplo de análise
+df['coluna'].value_counts().plot(kind='bar')
+plt.title('Distribuição dos Dados')
+plt.xlabel('Categoria')
+plt.ylabel('Quantidade')
+plt.savefig('analise.png')</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="qualidade">
+                <h2>3. Qualidade e Integridade dos Dados</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Verificação e Tratamento de Dados</button>
+                    <div class="spoiler-content">
+                        <ul>
+                            <li><strong>Verificação de Duplicatas:</strong>
+                                <div class="code-block">
+                                    <pre><code class="language-sql">SELECT coluna, COUNT(*)
+FROM tabela
+GROUP BY coluna
+HAVING COUNT(*) > 1;</code></pre>
+                                </div>
+                            </li>
+                            <li><strong>Consistência de Dados:</strong></li>
+                            <li><strong>Tratamento de Dados Faltantes:</strong></li>
+                            <li><strong>Validação de Dados:</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="documentacao">
+                <h2>4. Documentação</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Manutenção de Documentos</button>
+                    <div class="spoiler-content">
+                        <p>Todos os documentos devem ser atualizados periodicamente. É necessário manter registros de versões e alterações realizadas. Utilize ferramentas de controle de versão para gerenciar as atualizações.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="seguranca">
+                <h2>5. Procedimentos de Segurança</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Acesso aos Dados</button>
+                    <div class="spoiler-content">
+                        <p>O acesso aos dados deve ser restrito a pessoal autorizado. Use autenticação forte e criptografia para proteger os dados durante a transmissão e armazenamento.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="normas">
+                <h2>6. Normas e Diretrizes</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Cumprimento das Normas</button>
+                    <div class="spoiler-content">
+                        <p>As normas devem ser seguidas rigorosamente para garantir a conformidade. Inclua diretrizes claras para a execução das tarefas e a manutenção dos padrões de qualidade.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="responsabilidades">
+                <h2>7. Responsabilidades de Cada Membro da Equipe</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Funções e Responsabilidades</button>
+                    <div class="spoiler-content">
+                        <p>Defina claramente as responsabilidades de cada membro da equipe. Certifique-se de que todos entendam suas tarefas e as expectativas em relação ao desempenho.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ferramentas">
+                <h2>8. Ferramentas e Materiais Necessários</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Lista de Ferramentas</button>
+                    <div class="spoiler-content">
+                        <p>Inclua uma lista completa das ferramentas e materiais necessários para a execução das tarefas, com descrições e links para aquisição, se necessário.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="medidas">
+                <h2>9. Medidas de Segurança e Uso de EPIs</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">EPIs Necessários</button>
+                    <div class="spoiler-content">
+                        <p>Descreva os Equipamentos de Proteção Individual (EPIs) necessários para a execução segura das tarefas. Forneça instruções sobre o uso adequado e a manutenção dos EPIs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="padroes">
+                <h2>10. Padrões de Qualidade a Serem Atendidos</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Qualidade e Clareza</button>
+                    <div class="spoiler-content">
+                        <p>Todos os produtos finais devem atender aos padrões de qualidade estabelecidos, com precisão, clareza e pontualidade nas entregas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="formularios">
+                <h2>11. Formulários e Registros Relevantes</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Modelos e Registros</button>
+                    <div class="spoiler-content">
+                        <p>Inclua exemplos de formulários e registros relevantes para a documentação das atividades. Forneça modelos e instruções para preenchimento.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="atualizacoes">
+                <h2>12. Atualizações e Revisões do MIP</h2>
+                <div class="spoiler">
+                    <button class="spoiler-btn">Revisão do Manual</button>
+                    <div class="spoiler-content">
+                        <p>Este MIP será revisado e atualizado regularmente para garantir que permanece relevante e em conformidade com as melhores práticas e regulamentações vigentes.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <button id="scroll-to-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>

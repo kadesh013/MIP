@@ -1,0 +1,175 @@
+/* Estilo para o corpo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o contêiner principal */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilo do sumário */
+.toc {
+    margin-bottom: 20px;
+}
+
+.toc h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.toc ul li {
+    margin-bottom: 5px;
+}
+
+.toc ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.toc ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo dos spoilers */
+.spoiler {
+    margin-bottom: 10px;
+}
+
+.spoiler-btn {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+    color: #000; /* Texto em preto quando não estiver sobre o spoiler */
+    position: relative;
+    border-radius: 5px;
+}
+
+.spoiler-btn:hover {
+    color: #007bff; /* Texto em azul quando sobre o spoiler */
+}
+
+.spoiler-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 5px; /* Adiciona borda arredondada ao conteúdo */
+    overflow-x: auto; /* Permite rolagem horizontal */
+}
+
+/* Estilo para o bloco de código */
+.code-block {
+    overflow-x: auto; /* Permite rolagem horizontal */
+    white-space: nowrap; /* Impede a quebra de linha no código */
+}
+
+/* Estilo para o código */
+pre, code {
+    margin: 0;
+    padding: 0;
+    font-family: monospace; /* Fonte monoespaçada para código */
+}
+
+/* Estilo para os botões "Abrir Todos" e "Fechar Todos" */
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para o botão de voltar ao topo */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Estilo para o texto dos botões */
+.scroll-to-top::before {
+    content: '↑'; /* Seta para cima */
+}
+/* Estilo para as imagens */
+img {
+    max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+    height: auto;    /* Mantém a proporção da imagem */
+    display: block;  /* Remove o espaço em branco ao redor das imagens */
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+
+/* Estilo adicional para imagens grandes */
+img.large {
+    width: 80%; /* Ajuste conforme necessário */
+    max-width: 800px; /* Limita a largura máxima em pixels */
+}
+
+/* Estilo adicional para imagens pequenas */
+img.small {
+    width: 40%; /* Ajuste conforme necessário */
+    max-width: 300px; /* Limita a largura máxima em pixels */
+}
+
