@@ -354,28 +354,127 @@ if __name__ == "__main__":
                 </div>
             </section>
 
+       
             <section id="qualidade">
                 <h2>3. Qualidade e Integridade dos Dados</h2>
+            
                 <div class="spoiler">
                     <button class="spoiler-btn">Verificação e Tratamento de Dados</button>
                     <div class="spoiler-content">
                         <ul>
                             <li><strong>Verificação de Duplicatas:</strong>
-                                <div class="code-block">
-                                    <pre><code class="language-sql">SELECT coluna, COUNT(*)
-FROM tabela
-GROUP BY coluna
-HAVING COUNT(*) > 1;</code></pre>
+                                <div class="spoiler">
+                                    <button class="spoiler-btn">Detalhes</button>
+                                    <div class="spoiler-content">
+                                        <div class="code-block">
+                                            <pre><code class="language-sql">SELECT coluna, COUNT(*)
+            FROM tabela
+            GROUP BY coluna
+            HAVING COUNT(*) > 1;</code></pre>
+                                        </div>
+                                        <p>Esse procedimento é utilizado para identificar e lidar com registros duplicados em uma tabela.</p>
+                                    </div>
                                 </div>
                             </li>
-                            <li><strong>Consistência de Dados:</strong></li>
-                            <li><strong>Tratamento de Dados Faltantes:</strong></li>
-                            <li><strong>Validação de Dados:</strong></li>
+                            <li><strong>Consistência de Dados:</strong>
+                                <div class="spoiler">
+                                    <button class="spoiler-btn">Detalhes</button>
+                                    <div class="spoiler-content">
+                                        <ul>
+                                            <li><strong>Verificação de Padrão de E-mail:</strong>
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">SELECT *
+            FROM tabela
+            WHERE coluna_email NOT LIKE '%_@__%.__%';</code></pre>
+                                                </div>
+                                                <p>Verifica se os e-mails seguem o padrão correto.</p>
+                                            </li>
+                                            <li><strong>Integridade Referencial:</strong>
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">SELECT fk_coluna
+            FROM tabela_filha
+            LEFT JOIN tabela_pai ON tabela_filha.fk_coluna = tabela_pai.pk_coluna
+            WHERE tabela_pai.pk_coluna IS NULL;</code></pre>
+                                                </div>
+                                                <p>Certifica-se de que todas as referências de chave estrangeira estão corretas.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><strong>Tratamento de Dados Faltantes:</strong>
+                                <div class="spoiler">
+                                    <button class="spoiler-btn">Detalhes</button>
+                                    <div class="spoiler-content">
+                                        <ul>
+                                            <li><strong>Substituir Valores Nulos:</strong>
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">UPDATE tabela
+            SET coluna = valor_padrao
+            WHERE coluna IS NULL;</code></pre>
+                                                </div>
+                                                <p>Substitui valores nulos por um valor padrão definido.</p>
+                                            </li>
+                                            <li><strong>Remover Registros com Valores Nulos:</strong>
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">DELETE FROM tabela
+            WHERE coluna IS NULL;</code></pre>
+                                                </div>
+                                                <p>Remove registros que possuem valores nulos em colunas específicas.</p>
+                                            </li>
+                                            <li><strong>Selecionar Registros Completos:</strong>
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">SELECT *
+            FROM tabela
+            WHERE coluna IS NOT NULL;</code></pre>
+                                                </div>
+                                                <p>Seleciona registros onde colunas não são nulas.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><strong>Validação de Dados:</strong>
+                                <div class="spoiler">
+                                    <button class="spoiler-btn">Detalhes</button>
+                                    <div class="spoiler-content">
+                                        <ul>
+                                            <li><strong>Verificar Intervalo de Valores:</strong>
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">SELECT *
+            FROM tabela
+            WHERE coluna < valor_minimo OR coluna > valor_maximo;</code></pre>
+                                                </div>
+                                                <p>Verifica se os valores estão dentro dos intervalos definidos.</p>
+                                            </li>
+                                            <li><strong>Verificar Valores Permitidos:</strong>
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">SELECT *
+            FROM tabela
+            WHERE coluna NOT IN ('valor1', 'valor2', 'valor3');</code></pre>
+                                                </div>
+                                                <p>Verifica se os valores estão dentro dos valores permitidos.</p>
+                                            </li>
+                                            <li><strong>Verificar Formato de Data (PostgreSQL):</strong>
+                                                <div class="code-block">
+                                                    <pre><code class="language-sql">SELECT *
+            FROM tabela
+            WHERE TO_DATE(coluna_data, 'YYYY-MM-DD') IS NULL;</code></pre>
+                                                </div>
+                                                <p>Verifica se as datas estão no formato correto.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
+            
 
+
+            
             <section id="documentacao">
                 <h2>4. Documentação</h2>
                 <div class="spoiler">
