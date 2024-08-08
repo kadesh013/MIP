@@ -273,14 +273,78 @@ df.to_csv('resultado.csv', index=False)</code></pre>
                                     <button class="spoiler-btn">Exemplo de Script em Python</button>
                                     <div class="spoiler-content">
                                         <div class="code-block">
-                                            <pre><code class="language-python">import matplotlib.pyplot as plt
+                                            <pre><code class="language-python">
+                                                import fdb
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
 
-# Exemplo de análise
-df['coluna'].value_counts().plot(kind='bar')
-plt.title('Distribuição dos Dados')
-plt.xlabel('Categoria')
-plt.ylabel('Quantidade')
-plt.savefig('analise.png')</code></pre>
+# Configurações do banco de dados Firebird
+firebird_dsn = 'localhost:C:/BANCOS/santos/SAV50.FDB'
+user = 'SYSDBA'
+password = 'masterkey'
+
+# Função para conectar ao Firebird e extrair dados
+def extrair_dados_faturamento():
+    con = fdb.connect(
+        dsn=firebird_dsn,
+        user=user,
+        password=password,
+        charset='UTF8'
+    )
+    query = """
+        SELECT
+            EXTRACT(YEAR FROM v.DATA) AS ano,
+            SUM(i.total + i.jur_desc) AS faturamento
+        FROM
+            VENDAS v
+        INNER JOIN
+            ITENS i ON i.ID_VEN = v.ID_VEN
+        WHERE
+            COALESCE(v.CANCELADA, 0) = 0
+            AND EXTRACT(YEAR FROM v.DATA) BETWEEN 2015 AND 2024
+        GROUP BY
+            EXTRACT(YEAR FROM v.DATA)
+        ORDER BY
+            ano
+    """
+    cur = con.cursor()
+    cur.execute(query)
+    dados = cur.fetchall()
+    con.close()
+    
+    # Converter os dados para um DataFrame
+    df = pd.DataFrame(dados, columns=['ano', 'faturamento'])
+    return df
+
+# Função para gerar gráfico de faturamento por ano
+def gerar_grafico(df):
+    plt.figure(figsize=(10, 6))
+    plt.plot(df['ano'], df['faturamento'], marker='o', linestyle='-', color='b')
+    plt.title('Faturamento Anual (2015-2024)')
+    plt.xlabel('Ano')
+    plt.ylabel('Faturamento')
+    plt.grid(True)
+    plt.xticks(df['ano'])  # Mostrar todos os anos no eixo X
+    plt.tight_layout()
+    
+    # Salvar gráfico como imagem
+    if not os.path.exists('gráficos'):
+        os.makedirs('gráficos')
+    plt.savefig('gráficos/faturamento_anual.png')
+    plt.show()
+
+def main():
+    df_faturamento = extrair_dados_faturamento()
+    gerar_grafico(df_faturamento)
+
+if __name__ == "__main__":
+    main()
+
+    <br>
+    <img src="img/faturamento_anual.png" alt="Novo Relatório">
+
+                                            </code></pre>
                                         </div>
                                     </div>
                                 </div>
